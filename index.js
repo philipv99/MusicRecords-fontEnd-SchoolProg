@@ -14,7 +14,7 @@ Vue.createApp({
          try
          {
             const response = await axios.get(url)
-            this.record = await response.data
+            this.records = await response.body
          }
          catch(ex)
          {
