@@ -1,13 +1,25 @@
+const apiurl = ""
 Vue.createApp({
    data(){
       return{
-        hej: null
+        record: []
+
       };
    },
-   //async
+   async created(){
+     this.getAll(apiurl) 
+   },
    methods: {
-      say(input){
-         hej = input
+      async getAll(url){
+         try
+         {
+            const response = await axios.get(url)
+            this.record = await response.data
+         }
+         catch(ex)
+         {
+            alert(ex.message)
+         }
          }
       }
    }
