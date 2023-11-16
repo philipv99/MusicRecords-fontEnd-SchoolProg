@@ -10,6 +10,22 @@
    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
-   <script src="./index.js"></script>
+   <section>
+      <div class="container"id = "app">
+         <div v-for = "record in records" class="card">
+            <h1 class="card-title">
+               {{record.title}}
+            </h1>
+            <div class="card-body">
+               <ul>
+                  <li>{{record.artist}}</li>
+                  <li>{{record.publicationYear}}</li>
+                  <li>{{record.duaration}}</li>
+               </ul>
+            </div>
+         </div>
+      </div> 
+   </section>
+   <script src="./index.js"></script>  
 </body>
 </html>

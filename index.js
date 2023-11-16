@@ -2,7 +2,7 @@ const apiurl = "https://progrecords-pearporg-opgave.azurewebsites.net/Api/MusicR
 Vue.createApp({
    data(){
       return{
-        record: []
+        records: []
 
       };
    },
