@@ -3,7 +3,6 @@ Vue.createApp({
    data(){
       return{
         records: []
-
       };
    },
    async created(){
@@ -15,6 +14,7 @@ Vue.createApp({
          {
             const response = await axios.get(url)
             this.records = await response.body
+            console.log(response);
          }
          catch(ex)
          {
