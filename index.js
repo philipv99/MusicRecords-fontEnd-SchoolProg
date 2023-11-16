@@ -1,4 +1,4 @@
-const apiurl = ""
+const apiurl = "https://progrecords-pearporg-opgave.azurewebsites.net/Api/MusicRecords"
 Vue.createApp({
    data(){
       return{
