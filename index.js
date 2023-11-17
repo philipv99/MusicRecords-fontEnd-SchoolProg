@@ -1,4 +1,6 @@
 const apiurl = "https://progrecords-pearporg-opgave.azurewebsites.net/Api/MusicRecords"
+
+
 Vue.createApp({
    data(){
       return{
@@ -10,17 +12,14 @@ Vue.createApp({
    },
    methods: {
       async getAll(url){
-         try
-         {
+         try{
             const response = await axios.get(url)
-            this.records = await response.body
+            this.records = await response.data
             console.log(response);
          }
-         catch(ex)
-         {
+         catch(ex){
             alert(ex.message)
-         }
          }
       }
    }
-).mount("#app")
+}).mount("#app")

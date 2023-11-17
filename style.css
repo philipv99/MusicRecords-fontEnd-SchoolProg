@@ -1,4 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bellota+Text:ital,wght@0,400;0,700;1,400&display=swap');
+
 body::before{
    display:block;
    content:'';
+}
+
+*{
+   transition: all ease-out 0.4s;
+}
+
+p{
+   font-family: 'Bellota Text', sans-serif;
+   font-size:large;
+}
+
+h1, h2, h3, h4, h5, h6{
+   font-family: 'Anton', sans-serif;
+}
+
+.main-title{
+   font-size: 10pc;
+   line-height: 95%;
+   text-indent:-7%;
+   padding-left:10%;
+   text-transform: capitalize;
+   word-spacing: .2rem;
+}
+
+.main-tilte-music{ 
+   background: rgb(255,255,255);
+   background: linear-gradient(90deg, rgba(255,255,255,1) 59%, rgba(245,89,139,1) 59%, rgba(223,142,168,1) 100%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+
+   animation: wave 8s ease-in-out infinite;
+   transition: all 0.4s ease-in-out;
+}
+
+@keyframes wave {
+   0%{
+      background-position:5rem 0;
+      
+   }
+   33%{
+      background-position:7rem 0;
+   }
+   66%{
+      background-position:50rem 0;
+   }
+   100%{
+      background-position:5rem 0;
+   }
+   
+}
+
+.card{
+   min-width:150px;
+}
+
+.card:hover{
+   filter:drop-shadow( 0px 10px 20px rgba(0, 0, 0, 0.594));
+   transform: scale(1.05) translate(0px, -5px);
+}
+
+.card:hover img{
+   filter: contrast(130%) saturate(110%);
+}
+
+input{
+   padding: 2%;
+   border-radius: 5rem;
+   margin: 1rem;
+   width: 100%;
+   border: none;
+   box-shadow:inset 5px 5px 7px #0000003d;
+   outline: solid 1px #787878;
+}
+
+input:focus{
+   outline: solid 1px rgb(20, 52, 234);
+}
+
+.hide{
+   visibility: hidden !important;
+}
+
+.add-form{
+   position:fixed;
+   bottom: 30%; 
+   right: 8%;
+   z-index: 1;
+   min-height: 400px;
+   max-width: 80%;
+}
+
+.fixed-on-screen{
+   position: fixed;
+   bottom: 1rem; 
+   right: 1rem;
+   z-index: 2;
+}
+
+@media only screen and (min-width: 750px){
+   .add-form{
+      max-width: 50%;
+   }
 }

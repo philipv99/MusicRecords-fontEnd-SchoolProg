@@ -10,27 +10,46 @@
    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
+
    <section class="bg-dark py-5">
-      <div class="container py-2" id="app">
-         {{records}}
-         <div v-for="record in this.records" class="">
-            <h1 class="card-title">
-               {{record}}
+      <h1 class="text-bg-dark main-title">The new in <br><span class="main-tilte-music">music</span></h1> 
+
+      <div class="container-fluid py-2 d-flex justify-content-center flex-wrap" id="app">
+         <div v-for="record in records" class="card p-1 m-3 w-25 shadow">
+            <h1 class="card-title px-2">
+               {{record.title}}
             </h1>
+            <img src="https://images.pexels.com/photos/2247677/pexels-photo-2247677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
             <div class="card-body">
                <p>{{record.publicationYear}}</p>
-               <p>{{record.duaration}}</p>
+               <p>{{record.duration}}</p>
                <p>{{record.artist}}</p>
             </div>
          </div>
+      </div>
 
-         <ul v-for="record in records">
-            <li>{{record.artist}}</li>
-            <li>{{record.publicationYear}}</li>
-            <li>{{record.duaration}}</li>
-         </ul>
-      </div> 
+
+      <div class="container-sm " id="grud">
+         <div class="container add-form bg-info rounded-4 p-3 shadow" v-show="showAddForm">
+            <h3>Add new Record</h3>
+            <div class="container d-flex justify-content-evenly align-items-center flex-column h-100 w-100">
+               <input v-model="addData.title" type="text" placeholder="Tilte" name="add new title">
+               <input v-model="addData.artist" type="text" placeholder="Artist" name="add new Artist">
+               <input v-model="addData.publicationYear" type="number" placeholder="Relice-year" name="add new Relice year">
+               <input v-model="addData.Duration" type="number" placeholder="duration" name="add new duration">
+               <button v-on:click="addRecord()" class="btn btn-success">Add</button>
+               <div>{{addMeassge}}</div>
+            </div>
+         </div>
+
+         <button v-on:click="showAddForm = !showAddForm" class="btn btn-primary text-light text-center fixed-on-screen">
+            <h1 class="card-title p-0 m-0">Add new</h1>
+         </button>       
+      </div>
+
    </section>
+
+   <script src="./Crud.js"></script> 
    <script src="./index.js"></script>  
 </body>
 </html>
