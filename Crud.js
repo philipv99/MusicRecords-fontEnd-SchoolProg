@@ -36,6 +36,9 @@ Vue.createApp({
          catch(ex){
             alert(ex.message)
          }
-      }
+      },
+
+
+
    }
 }).mount("#grud")

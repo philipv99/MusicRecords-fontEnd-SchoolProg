@@ -4,7 +4,8 @@ const apiurl = "https://progrecords-pearporg-opgave.azurewebsites.net/Api/MusicR
 Vue.createApp({
    data(){
       return{
-        records: []
+        records: [],
+        idtosearch : -1
       };
    },
    async created(){
@@ -20,6 +21,12 @@ Vue.createApp({
          catch(ex){
             alert(ex.message)
          }
-      }
+      },
+      GetById(idtosearch){
+         if (this.idtosearch < 0){
+            alert ("insert id")
+         } 
+         records.find(x=>x.id===idtosearch)
+      },
    }
 }).mount("#app")

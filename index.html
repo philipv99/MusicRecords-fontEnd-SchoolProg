@@ -15,6 +15,8 @@
       <h1 class="text-bg-dark main-title">The new in <br><span class="main-tilte-music">music</span></h1> 
 
       <div class="container-fluid py-2 d-flex justify-content-center flex-wrap" id="app">
+         <input type="number" v-model="idtosearch" class="input p-3 rounded-4">
+         <button v-on:click="GetById()">search by id</button>
          <div v-for="record in records" class="card p-1 m-3 w-25 shadow">
             <h1 class="card-title px-2">
                {{record.title}}
