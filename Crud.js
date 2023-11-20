@@ -18,12 +18,24 @@ Vue.createApp({
          try{
             response = await axios.post(apiurl, this.addData)
             this.addMeassge = "response " + response.status + " " + response.statusText
-            getAll(apiurl)
+            this.getAll(apiurl)
             showAddForm = false
          }
          catch (ex) {
             alert(ex.message)
          };
+      },
+
+
+      async getAll(url){
+         try{
+            const response = await axios.get(url)
+            this.records = await response.data
+            console.log(response);
+         }
+         catch(ex){
+            alert(ex.message)
+         }
       }
    }
 }).mount("#grud")
