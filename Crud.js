@@ -18,7 +18,7 @@ Vue.createApp({
          try{
             response = await axios.post(apiurl, this.addData)
             this.addMeassge = "response " + response.status + " " + response.statusText
-            .getAll(apiurl)
+            getAll(apiurl)
             showAddForm = false
          }
          catch (ex) {
